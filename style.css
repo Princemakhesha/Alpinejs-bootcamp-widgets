@@ -1,0 +1,40 @@
+body {
+    background-image: url(approvedbackground.webp);
+    /* background-image: url(Backgroundimage.jpg); */
+    /* background-size: cover; */
+    /* color: greenyellow; */
+
+}
+
+.heading {
+    display: flex;
+    color: white;
+}
+
+.blocks {
+    display: flex;
+}
+
+.block {
+    color: whitesmoke;
+    flex: 1;
+    border: 1px solid grey;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1em;
+}
+
+.greet {
+    background-color: gray;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 0.5em;
+}
+
+.message {
+    background-color: lightslategray;
+    /* color: greenyellow; */
+    padding: 0.25em;
+    width: 10em;
+    margin-bottom: 0.5em;
+}

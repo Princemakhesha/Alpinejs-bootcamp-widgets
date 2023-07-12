@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="greet.js" defer></script>
+    <script src="greet.data.js" defer></script>
+    <script src="transportfee.js" defer></script>
+    <script src="transportfee.data.js" defer></script>
+    <script src="totalphonebill.js" defer></script>
+    <script src="totalphonebill.data.js" defer></script>
+    <script src="enoughairtime.js" defer></script>
+    <script src="enoughairtime.data.js" defer></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+</head>
+
+<body>
+
+    <div class="heading">
+        <img src="testing icon.png" width="100" alt="">
+        <h1>AlpineJS widgets for Bootcamp functions</h1>
+    </div>
+
+
+    <section class="blocks">
+
+        <div class="block" x-data="greetMe" x-init="username='John'">
+            <h3>The greet function</h3>
+            <div class="greet" x-text="greetMessage">
+                Greeting goes here...
+            </div>
+            Greet this name: <input x-model="username" type="text">
+            <button x-on:click="greetMe()">Greet!</button>
+
+        </div>
+        <div class="block" x-data="transportFee">
+            <h3>Transport fee function</h3>
+            <form>
+                <input type="radio" name="shift" value="morning" x-model="shift"> Morning shift<br>
+                <input type="radio" name="shift" value="afternoon" x-model="shift"> Afternoon shift<br>
+                <input type="radio" name="shift" value="nightshift" x-model="shift"> Night shift<br>
+            </form>
+            <br>
+            <div>
+                <button x-on:click="calculateFee">Calculate Transport Fee</button>
+            </div>
+            <br>
+            <div class="message" x-text="'Transport fee: R' + price.toFixed(2)"></div>
+        </div>
+
+
+    </section>
+
+    <section class="blocks">
+
+        <div class="block" x-data="totalPhoneBill">
+            <h3>Total phone bill function</h3>
+            <div class="input">
+                <label for="bill">Phone usage: </label>
+                <input type="text" x-model="statement" id="bill">
+
+            </div>
+            <br>
+            <div>
+                <button x-on:click="calculateBill">Check Total Phone Bill</button>
+            </div>
+            <br>
+            <div x-show="billMessage.length > 0" class="message" x-text="billMessage">
+            </div>
+                    
+        </div>
+
+        <div class="block">
+            <h3>Enough airtime function</h3>
+            <div class="input">
+                <label for="usage">Airtime usage: </label>
+                <input type="text" x-model="airtimeUsage" id="usage">
+            </div>
+
+            <br>
+
+            <div class="input">
+                <label for="amount">Amount available: </label>
+                <input type="text" x-model="availableAirtime" id="amount">
+            </div>
+
+            <br>
+
+            <div>
+                <button x-on:click="calculate()">Calculate airtime usage</button>
+            </div>
+
+            <br>
+
+            <div x-show="airtimeMessage.length > 0" class="message" x-text="airtimeMessage">
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+
+</body>
+
+</html>
